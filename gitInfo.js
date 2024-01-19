@@ -9,7 +9,7 @@
     It should be a string containing your best definition of what Git is.
 */
 
-//CODE HERE
+const gitDefinition ="Git is a tool that helps developers work together on projects by keeping track of changes in their code. It makes it easy to collaborate and manage different versions of the code.";
 
 //////////////////PROBLEM 2////////////////////
 /*
@@ -17,7 +17,7 @@
     It should be a string containing your best definition of what GitHub is.
 */
 
-//CODE HERE
+const gitHubDefinition="GitHub is a website where developers can store and collaborate on their code using Git. It's a central hub for developers that offers a lot of features.";
 
 //////////////////PROBLEM 3////////////////////
 /*
@@ -25,7 +25,7 @@
     It should be a string containing your best definition of what 'git init' does.
 */
 
-//CODE HERE
+const gitInitDefinition="git init is a command that sets up a new space for your project to keep track of changes using Git.";
 
 //////////////////PROBLEM 4////////////////////
 /*
@@ -33,7 +33,7 @@
     It should be a string containing your best definition of what 'git clone' does.
 */
 
-//CODE HERE
+const gitCloneDefinition="git clone is like making a local copy of a project stored online, so you can work on it on your own computer.";
 
 //////////////////PROBLEM 5////////////////////
 /*
@@ -41,7 +41,7 @@
     It should be a string containing your best definition of what 'git status' does.
 */
 
-//CODE HERE
+const gitStatusDefinition="git status is a command that shows you the current state of your Git repository, it can show you info like changes you've made, files you've staged, and more";
 
 //////////////////PROBLEM 6////////////////////
 /*
@@ -52,7 +52,9 @@
     It should be a string containing the code to add all files.
 */
 
-//CODE HERE
+const gitAddDefinition="git add prepares your updates to be saved in the next snapshot of your project. It stages changes in your working directory";
+
+const gitAddCode="git add .";
 
 //////////////////PROBLEM 7////////////////////
 /*
@@ -63,7 +65,9 @@
     It should be a string containing the code to commit using the message "initial commit".
 */
 
-//CODE HERE
+const gitCommitDefinition="This command records the changes you've made with git add. It's a way to document what you've done and helps you keep track of your projects development";
+
+const gitCommitCode="git commit -m 'initial commit'";
 
 
 //////////////////PROBLEM 8////////////////////
@@ -72,4 +76,4 @@
     It should be a string containing your best definition of what 'git push' does.
 */
 
-//CODE HERE
+const gitPushDefinition="git push helps share your local work with other by sending to a central straoge space like GitHub. I makes all your updates avalible";

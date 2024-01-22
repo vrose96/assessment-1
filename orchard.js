@@ -49,11 +49,16 @@ const pinkPrice = .55
     Log `totalAcres` to the console.
 */
 
-// CODE HERE
+let totalAcres = 0;
 
+for (let i = 0; i < fujiAcres.length; i++) {
+  totalAcres += fujiAcres[i] + galaAcres[i] + pinkAcres[i];
+}
+console.log("Total Acres Picked for the Week:", totalAcres);
 
-
-
+// I started by making the total acres varible 0 because it's common practice and it's going to accumulate the values within the loop. 
+//I used the .length code because I wanted the loop to run for a week which is 7 days. The lenght of the arrays was 7 so using that code made sense. As it loops through the goals was to add the acres for each type of apple
+//Lastly, using console.log is to accrualty show the total number of acres picked for the week and shows the answer is the console. 
 
 // PROBLEM 2
 
@@ -67,11 +72,20 @@ const pinkPrice = .55
     Log `averageDailyAcres` to the console.
 */
 
-// CODE HERE
+for (let i = 0; i < fujiAcres.length; i++) {
+    totalAcres += fujiAcres[i] + galaAcres[i] + pinkAcres[i];
+}
 
+const numberOfDays = fujiAcres.length;
+const averageDailyAcres = totalAcres / numberOfDays;
 
+console.log('Average Daily Acres Picked:', averageDailyAcres);
 
-
+//I started by setting up a variable called totalAcres to keep track of the total number of acres picked.
+//Using a loop, I went through each day of the week and added up the acres picked for each type of apple. 
+//Then I figured out the number of days in the week by looking at the length of one of the arrays.
+//I then calculated the average daily acres by dividing the total acres by the number of days.
+//Finally, I printed out the average daily acres to the console.
 
 // PROBLEM 3
 
@@ -105,9 +119,15 @@ const pinkPrice = .55
 let acresLeft = 174 
 let days = 0
 
-// CODE HERE
+while (acresLeft > 0) {
+    days++;
+    acresLeft -= averageDailyAcres;
+}
 
+console.log('Number of Days to Finish:', days);
 
+//The iterates loop through each day, incrementing the days counter and reducing the acresLeft.
+//After the loop, we log the final number of days needed to finish picking all the apples to the console.
 
 // PROBLEM 4
 
@@ -133,16 +153,29 @@ let days = 0
     values to the new arrays.
 */
 
-// CODE HERE
+const fujiTons = fujiAcres.slice();
+const galaTons = galaAcres.slice();
+const pinkTons = pinkAcres.slice();
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+const tonsPerAcre = 6.5;
 
+for (let i = 0; i < fujiTons.length; i++) {
+    fujiTons[i] *= tonsPerAcre;
+    galaTons[i] *= tonsPerAcre;
+    pinkTons[i] *= tonsPerAcre;
+  }
 
+console.log("Fuji Tons:", fujiTons);
+console.log("Gala Tons:", galaTons);
+console.log("Pink Tons:", pinkTons);
 
+// let fujiTons = [13,19.5,19.5,13,13,13,6.5]
+// let galaTons = [32.5, 13, 26, 19.5, 39, 13, 26]
+// let pinkTons = [6.5, 32.5, 26, 13, 6.5, 32.5, 26]
 
-
+//I used slice to make copies of the original arrays. I did this to make copies so I can work with the copies instead of the original copy.
+//We go through each day's data in the copied arrays and multipy it 6.5 to convert the amount from acres to tons.
+//We make copies to avoid changes to the original data
 
 // PROBLEM 5
 
@@ -160,16 +193,25 @@ let days = 0
     Hint: there are 2000 pounds in a ton.
 */
 
-// CODE HERE 
+let totalPoundsFuji, totalPoundsGala, totalPoundsPink;
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+const poundsPerTon = 2000;
 
+totalPoundsFuji = fujiTons.reduce((sum, tons) => sum + tons, 0) * poundsPerTon;
+totalPoundsGala = galaTons.reduce((sum, tons) => sum + tons, 0) * poundsPerTon;
+totalPoundsPink = pinkTons.reduce((sum, tons) => sum + tons, 0) * poundsPerTon;
 
+console.log("Total Pounds of Fuji Apples:", totalPoundsFuji);
+console.log("Total Pounds of Gala Apples:", totalPoundsGala);
+console.log("Total Pounds of Pink Apples:", totalPoundsPink);
 
+// let fujiPounds = 195000
+// let galaPounds = 338000
+// let pinkPounds = 286000
 
-
+//I use the reduce method to add up the tons for each variety. 
+//The reduce method takes a function that adds each value to the running sum. The 0 at the end is the initial value of the sum.
+//After summing up the tons, I multiply by poundsPerTon to convert the total from tons to pounds.
 
 // PROBLEM 6
 
@@ -187,16 +229,17 @@ let days = 0
     console. 
 */
 
-// CODE HERE
+const fujiProfit = totalPoundsFuji * fujiPrice;
+const galaProfit = totalPoundsGala * galaPrice;
+const pinkProfit = totalPoundsPink * pinkPrice;
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+console.log("Profit from Fuji Apples: $", (fujiProfit / 100).toFixed(2));  
+console.log("Profit from Gala Apples: $", (galaProfit / 100).toFixed(2));
+console.log("Profit from Pink Apples: $", (pinkProfit / 100).toFixed(2));
 
-
-
-
-
+// let fujiProfit = $ 1735.50
+// let galaProfit = $ 2163.20
+// let pinkProfit = $ 1573.00
 
 // PROBLEM 7
 
@@ -208,4 +251,5 @@ let days = 0
     Log `totalProfit` to the console.
 */
 
-// CODE HERE
+const totalProfit = fujiProfit + galaProfit + pinkProfit;
+console.log("Total Profit from Apple Sales: $", (totalProfit / 100).toFixed(2));
